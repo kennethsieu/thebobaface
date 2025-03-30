@@ -1,8 +1,11 @@
-import {Route, Routes} from 'react-router-dom';
+import {Link, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 
 import {Amplify} from 'aws-amplify';
 import {Authenticator, useTheme, Image, View, CheckboxField, useAuthenticator} from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
+import RedirectComponent from './RedirectComponent';
+import { Hub } from 'aws-amplify/utils';
+import { Auth } from 'aws-amplify/auth';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,12 +15,12 @@ import SiteNav from './components/Common/SiteNav';
 import SiteFooter from './components/Common/SiteFooter';
 import HomePage from './components/Common/home/HomePage';
 import { signUp } from '@aws-amplify/auth';
+import { useState, useEffect } from 'react';
 
 
 Amplify.configure(awsExports)
 
 function App() {
-
   const customComponents = {
     // (Optional) Keep your custom Header if you have one.
     Header() {
@@ -82,15 +85,9 @@ function App() {
   
 
   return (
-    <Authenticator
-      initialState="signUp" // Starts with the sign-up form
-      components={customComponents}
-      services={customServices}
-    >
-      {({ signOut, user }) => (
         <div>
         <header>
-          <SiteNav logOut={signOut}/>
+          <SiteNav/>
           <Routes>
             <Route path='*' element= {<HomePage />} />
             <Route path='/' exact={true} element= {<HomePage />} />
@@ -98,8 +95,6 @@ function App() {
           <SiteFooter/>
         </header>
       </div>
-      )}
-    </Authenticator>
   );
 }
 

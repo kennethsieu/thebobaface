@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bobaface-dev-f5b8c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::775409934388:role/amplify-bobaface-dev-f5b8c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::775409934388:role/amplify-bobaface-dev-f5b8c-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-bobaface-dev-f5b8c-deployment",
+      "UnauthRoleName": "amplify-bobaface-dev-f5b8c-unauthRole",
+      "StackName": "amplify-bobaface-dev-f5b8c",
+      "StackId": "arn:aws:cloudformation:us-west-1:775409934388:stack/amplify-bobaface-dev-f5b8c/a8f21720-f4c4-11ef-9221-025bc406978b",
+      "AmplifyAppId": "d1kx8bilb7zx94"
+    }
+  }
+}
